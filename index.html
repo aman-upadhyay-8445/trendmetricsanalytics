@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendMetrics Intelligence – Intelligent Analytics. Clear Decisions.</title>
-    <meta name="description" content="TrendMetrics Intelligence transforms your data into actionable intelligence. We help founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.">
-    <meta property="og:title" content="TrendMetrics Intelligence – Intelligent Analytics. Clear Decisions.">
-    <meta property="og:description" content="TrendMetrics Intelligence transforms your data into actionable intelligence. Premium analytics & dashboard consulting for growing businesses.">
+    <title>TrendMetrics Intelligence – Premium Analytics & Automation Intelligence</title>
+    <meta name="description" content="TrendMetrics Intelligence transforms your data into actionable intelligence. We build data systems that power smarter decisions, faster growth, and automation-led efficiency.">
+    <meta property="og:title" content="TrendMetrics Intelligence – Premium Analytics & Automation Intelligence">
+    <meta property="og:description" content="Premium analytics & automation consulting. We build data systems that power smarter decisions, faster growth, and automation-led efficiency.">
     <meta property="og:url" content="https://www.trendmetricsintelligence.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="TrendMetrics Intelligence">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/brand.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -19,22 +19,18 @@
             theme: {
                 extend: {
                     colors: {
-                        'navy': '#1e3a5f',
-                        'navy-dark': '#0f1f35',
-                        'blue-accent': '#3b82f6',
-                        'blue-light': '#60a5fa',
-                        'gray-soft': '#f3f4f6',
+                        'primary-black': '#111111',
+                        'secondary-navy': '#0B1C33',
+                        'accent-gold': '#F5A623',
+                        'bg-light': '#F7F8FA',
+                        'text-primary': '#1A1A1A',
+                        'text-secondary': '#666666',
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -46,68 +42,8 @@
             }
         }
         
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-        
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .animate-slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .animate-slide-in-right {
-            animation: slideInRight 0.8s ease-out;
-        }
-        
-        .flow-arrow {
-            position: relative;
-        }
-        
-        .flow-arrow::after {
-            content: '→';
-            position: absolute;
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: #3b82f6;
-            animation: pulse 2s infinite;
-        }
-        
-        @media (max-width: 768px) {
-            .flow-arrow::after {
-                display: none;
-            }
         }
         
         .chart-container {
@@ -119,66 +55,65 @@
         .metric-counter {
             font-size: 3rem;
             font-weight: 700;
-            color: #3b82f6;
-        }
-        
-        .process-step {
-            transition: transform 0.3s ease;
-        }
-        
-        .process-step:hover {
-            transform: translateY(-10px);
+            color: #0B1C33;
         }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white">
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav id="navbar" class="navbar fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-navy">TrendMetrics Intelligence</a>
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <a href="index.html" class="brand-logo">
+                    <svg height="48" width="48" viewBox="240 250 150 150" class="md:h-12 h-10 transition-all duration-300">
+                        <path fill="#111111" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                        <path fill="#111111" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                    </svg>
+                    <div class="brand-logo-text">
+                        <span class="brand-logo-main">Trendmetrics</span>
+                        <span class="brand-logo-sub">INTELLIGENCE</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-text-primary hover:text-primary-black font-medium transition">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary-black font-medium transition">Services</a>
+                    <a href="case-studies.html" class="text-text-secondary hover:text-primary-black font-medium transition">Case Studies</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary-black font-medium transition">About</a>
+                    <a href="contact.html" class="btn-primary">Book Free Audit</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-navy font-medium">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-navy font-medium">Services</a>
-                    <a href="case-studies.html" class="text-gray-700 hover:text-navy font-medium">Case Studies</a>
-                    <a href="about.html" class="text-gray-700 hover:text-navy font-medium">About</a>
-                    <a href="contact.html" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-dark transition">Book Free Audit</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <button id="mobile-menu-btn" class="md:hidden text-text-primary">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <div class="px-4 pt-2 pb-4 space-y-2">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-navy">Home</a>
-                <a href="services.html" class="block py-2 text-gray-700 hover:text-navy">Services</a>
-                <a href="case-studies.html" class="block py-2 text-gray-700 hover:text-navy">Case Studies</a>
-                <a href="about.html" class="block py-2 text-gray-700 hover:text-navy">About</a>
-                <a href="contact.html" class="block bg-navy text-white px-6 py-2 rounded-lg text-center mt-4">Book Free Audit</a>
+                <a href="index.html" class="block py-2 text-text-primary hover:text-primary-black transition">Home</a>
+                <a href="services.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Services</a>
+                <a href="case-studies.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Case Studies</a>
+                <a href="about.html" class="block py-2 text-text-secondary hover:text-primary-black transition">About</a>
+                <a href="contact.html" class="block btn-primary text-center mt-4">Book Free Audit</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-soft to-white">
+    <section class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
-                    Intelligent Analytics. Clear Decisions.
+            <div class="text-center max-w-5xl mx-auto">
+                <h1 class="hero-headline mb-6">
+                    Premium Analytics & Automation <span class="intelligence-accent">Intelligence</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                    TrendMetrics Intelligence transforms your data into actionable intelligence. We help founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.
+                <p class="hero-subtext">
+                    We build data systems that power smarter decisions, faster growth, and automation-led efficiency.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.html" class="bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-dark transition shadow-lg hover:shadow-xl">
-                        👉 Book Free Reporting Audit
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                    <a href="contact.html" class="btn-primary">
+                        Book Free Audit
                     </a>
-                    <a href="case-studies.html" class="bg-white text-navy px-8 py-4 rounded-lg text-lg font-semibold border-2 border-navy hover:bg-gray-soft transition">
+                    <a href="case-studies.html" class="btn-secondary">
                         View Case Studies
                     </a>
                 </div>
@@ -186,304 +121,113 @@
         </div>
     </section>
 
-    <!-- Problem Section with Visual Comparison -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-navy text-center mb-4">The Reporting Problem</h2>
-            <p class="text-xl text-gray-600 text-center mb-12">See the difference between manual reporting and automated intelligence</p>
-            
-            <!-- Before/After Comparison -->
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-red-50 border-2 border-red-200 p-8 rounded-xl animate-slide-in-left">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold mr-3">BEFORE</span>
-                        <h3 class="text-2xl font-bold text-red-700">Manual Excel Reporting</h3>
-                    </div>
-                    <div class="chart-container mb-4">
-                        <canvas id="beforeChart"></canvas>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-2">✗</span>
-                            <span>4+ hours per week on manual data entry</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-2">✗</span>
-                            <span>Data is 7-30 days old</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-2">✗</span>
-                            <span>High error rate from copy-paste</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-2">✗</span>
-                            <span>No real-time visibility</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-green-50 border-2 border-green-200 p-8 rounded-xl animate-slide-in-right">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold mr-3">AFTER</span>
-                        <h3 class="text-2xl font-bold text-green-700">Automated Dashboards</h3>
-                    </div>
-                    <div class="chart-container mb-4">
-                        <canvas id="afterChart"></canvas>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span>0 hours on manual work (100% automated)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span>Real-time data (updates hourly)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span>Zero errors from automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span>Always-on visibility</span>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Services Overview -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Enterprise-grade analytics and automation solutions</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold text-navy mb-3">Manual Excel Hell</h3>
-                    <p class="text-gray-600">Hours wasted on manual data entry, copy-paste errors, and outdated spreadsheets that nobody trusts.</p>
-                </div>
-                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.1s">
-                    <div class="text-4xl mb-4">⏱️</div>
-                    <h3 class="text-xl font-semibold text-navy mb-3">No Real-Time KPIs</h3>
-                    <p class="text-gray-600">Decisions made on last week's data. No visibility into what's happening right now in your business.</p>
-                </div>
-                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.2s">
-                    <div class="text-4xl mb-4">🐌</div>
-                    <h3 class="text-xl font-semibold text-navy mb-3">Slow Decisions</h3>
-                    <p class="text-gray-600">By the time you get the numbers, the opportunity is gone. Reacting instead of acting proactively.</p>
-                </div>
-                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.3s">
-                    <div class="text-4xl mb-4">👻</div>
-                    <h3 class="text-xl font-semibold text-navy mb-3">Poor Visibility</h3>
-                    <p class="text-gray-600">Can't see revenue, costs, and growth trends clearly. Flying blind on critical business metrics.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section with Flow Diagram -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-soft">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-navy text-center mb-4">The TrendMetrics Intelligence Solution</h2>
-            <p class="text-xl text-gray-600 text-center mb-12">See how we transform your data into actionable insights</p>
-            
-            <!-- Automation Flow Diagram -->
-            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-16">
-                <h3 class="text-2xl font-bold text-navy text-center mb-8">How Our Automation Works</h3>
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
-                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
-                        <div class="text-4xl mb-3">📊</div>
-                        <h4 class="font-semibold text-navy mb-2">Data Sources</h4>
-                        <p class="text-sm text-gray-600">CRM, Marketing Tools, Databases</p>
-                    </div>
-                    <div class="flow-arrow hidden md:block"></div>
-                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
-                        <div class="text-4xl mb-3">⚙️</div>
-                        <h4 class="font-semibold text-navy mb-2">Automated Pipeline</h4>
-                        <p class="text-sm text-gray-600">SQL Processing & Transformation</p>
-                    </div>
-                    <div class="flow-arrow hidden md:block"></div>
-                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
-                        <div class="text-4xl mb-3">📈</div>
-                        <h4 class="font-semibold text-navy mb-2">Live Dashboards</h4>
-                        <p class="text-sm text-gray-600">Real-Time KPIs & Insights</p>
-                    </div>
-                    <div class="flow-arrow hidden md:block"></div>
-                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
-                        <div class="text-4xl mb-3">💡</div>
-                        <h4 class="font-semibold text-navy mb-2">Better Decisions</h4>
-                        <p class="text-sm text-gray-600">Actionable Intelligence</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-md process-step">
-                    <div class="text-3xl mb-4">⚡</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">SQL-Based Reporting Automation</h3>
-                    <p class="text-gray-600">We build automated data pipelines that pull from your tools and databases, transforming raw data into actionable insights.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md process-step">
-                    <div class="text-3xl mb-4">📈</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Executive KPI Dashboards</h3>
-                    <p class="text-gray-600">Founder-level clarity on sales, marketing, finance, and operations. See what matters in one glance.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md process-step">
-                    <div class="text-3xl mb-4">🎯</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Growth & Funnel Analytics</h3>
-                    <p class="text-gray-600">Track leads, conversions, CAC, ROI, and every step of your customer journey with precision.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md process-step">
-                    <div class="text-3xl mb-4">🔧</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Monthly Reporting Support</h3>
-                    <p class="text-gray-600">Ongoing monitoring, optimization, and maintenance to keep your dashboards accurate and valuable.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Impact Metrics Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-navy text-center mb-12">The Impact of Automation</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center bg-gray-soft p-8 rounded-xl">
-                    <div class="metric-counter" data-target="100">0</div>
-                    <div class="text-2xl font-semibold text-navy mb-2">%</div>
-                    <p class="text-gray-600">Time Saved on Manual Reporting</p>
-                </div>
-                <div class="text-center bg-gray-soft p-8 rounded-xl">
-                    <div class="metric-counter" data-target="24">0</div>
-                    <div class="text-2xl font-semibold text-navy mb-2">/7</div>
-                    <p class="text-gray-600">Real-Time Data Availability</p>
-                </div>
-                <div class="text-center bg-gray-soft p-8 rounded-xl">
-                    <div class="metric-counter" data-target="95">0</div>
-                    <div class="text-2xl font-semibold text-navy mb-2">%</div>
-                    <p class="text-gray-600">Reduction in Reporting Errors</p>
-                </div>
-                <div class="text-center bg-gray-soft p-8 rounded-xl">
-                    <div class="metric-counter" data-target="3">0</div>
-                    <div class="text-2xl font-semibold text-navy mb-2">x</div>
-                    <p class="text-gray-600">Faster Decision Making</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-navy text-center mb-4">Our Services</h2>
-            <p class="text-xl text-gray-600 text-center mb-12">Everything you need to replace Excel chaos with automated intelligence</p>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🔄</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Automated Reporting Setup</h3>
-                    <p class="text-gray-600 mb-4">Live SQL dashboards that refresh automatically. Connect your data sources once, get insights forever.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li>• Data pipeline automation</li>
-                        <li>• Multi-source integration</li>
-                        <li>• Real-time data refresh</li>
-                    </ul>
-                </div>
-                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Executive KPI Dashboards</h3>
-                    <p class="text-gray-600 mb-4">Founder-level sales, marketing, finance & operations clarity. See your business health at a glance.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li>• Custom KPI selection</li>
-                        <li>• Executive-level design</li>
-                        <li>• Mobile-responsive views</li>
-                    </ul>
-                </div>
-                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">📉</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Growth & Funnel Analytics</h3>
-                    <p class="text-gray-600 mb-4">Track leads, conversions, CAC, ROI. Understand every step of your customer journey.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li>• Conversion funnel tracking</li>
-                        <li>• CAC & ROI analysis</li>
-                        <li>• Cohort analysis</li>
-                    </ul>
-                </div>
-                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🛠️</div>
-                    <h3 class="text-2xl font-semibold text-navy mb-4">Monthly Reporting Support</h3>
-                    <p class="text-gray-600 mb-4">Ongoing monitoring & optimization. We keep your dashboards accurate and valuable.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li>• Monthly health checks</li>
-                        <li>• Dashboard optimization</li>
-                        <li>• New metric additions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why TrendMetrics Intelligence Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-navy text-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Why TrendMetrics Intelligence</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card animate-fade-in-up">
+                    <div class="text-3xl mb-4 text-secondary-navy">📊</div>
+                    <h3 class="text-xl font-semibold mb-3">Data Analytics</h3>
+                    <p class="text-text-secondary">Transform raw data into actionable insights with advanced analytics frameworks.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="text-3xl mb-4 text-secondary-navy">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-3">Process Automation</h3>
+                    <p class="text-text-secondary">Automate workflows and eliminate manual processes for maximum efficiency.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="text-3xl mb-4 text-secondary-navy">📈</div>
+                    <h3 class="text-xl font-semibold mb-3">KPI Dashboards</h3>
+                    <p class="text-text-secondary">Executive-level dashboards for real-time business intelligence.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="text-3xl mb-4 text-secondary-navy">🔧</div>
+                    <h3 class="text-xl font-semibold mb-3">System Integration</h3>
+                    <p class="text-text-secondary">Seamless integration of data sources and business systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding section-bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Why TrendMetrics Intelligence</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Trusted by leading organizations for premium analytics consulting</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
                     <div class="text-5xl mb-4">🎯</div>
-                    <h3 class="text-xl font-semibold mb-3">Business-First Dashboards</h3>
-                    <p class="text-gray-300">Built for founders, not data scientists. Every metric answers a real business question.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Strategic Focus</h3>
+                    <p class="text-gray-300">Every solution is designed to drive measurable business outcomes.</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-5xl mb-4">⚙️</div>
-                    <h3 class="text-xl font-semibold mb-3">Automated Pipelines</h3>
-                    <p class="text-gray-300">Set it and forget it. Your data flows automatically, no manual work required.</p>
+                    <div class="text-5xl mb-4">💼</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Enterprise Expertise</h3>
+                    <p class="text-gray-300">Proven methodologies from top-tier consulting experience.</p>
                 </div>
                 <div class="text-center">
-                    <div class="text-5xl mb-4">🎨</div>
-                    <h3 class="text-xl font-semibold mb-3">Clean Visual Design</h3>
-                    <p class="text-gray-300">Beautiful, intuitive dashboards that your team will actually want to use.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl mb-4">💡</div>
-                    <h3 class="text-xl font-semibold mb-3">Actionable KPIs</h3>
-                    <p class="text-gray-300">Every metric is tied to a decision. No vanity metrics, only insights that drive growth.</p>
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Scalable Solutions</h3>
+                    <p class="text-gray-300">Built to grow with your organization's evolving needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-accent to-blue-light">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Get your free reporting audit and growth roadmap.</h2>
-            <p class="text-xl text-blue-50 mb-8">See how automated reporting can transform your decision-making process.</p>
-            <a href="contact.html" class="inline-block bg-white text-navy px-10 py-4 rounded-lg text-lg font-semibold hover:bg-gray-soft transition shadow-xl">
-                Book a Call
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Data Strategy?</h2>
+            <p class="text-xl text-text-secondary mb-8">Schedule a consultation to discuss your analytics and automation needs.</p>
+            <a href="contact.html" class="btn-primary">
+                Book Free Consultation
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-dark text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-secondary-navy text-white py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">TrendMetrics Intelligence</h3>
-                    <p class="text-gray-400">Intelligent Analytics. Clear Decisions.</p>
+                    <a href="index.html" class="brand-logo mb-4">
+                        <svg height="40" width="40" viewBox="240 250 150 150" class="h-10">
+                            <path fill="#FFFFFF" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                            <path fill="#FFFFFF" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                        </svg>
+                        <div class="brand-logo-text">
+                            <span class="brand-logo-main" style="color: #FFFFFF;">Trendmetrics</span>
+                            <span class="brand-logo-sub" style="color: #FFFFFF;">INTELLIGENCE</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm">Premium Analytics & Automation Intelligence</p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="services.html" class="hover:text-white">Automated Reporting</a></li>
-                        <li><a href="services.html" class="hover:text-white">KPI Dashboards</a></li>
-                        <li><a href="services.html" class="hover:text-white">Funnel Analytics</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Data Analytics</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Process Automation</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">KPI Dashboards</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="case-studies.html" class="hover:text-white">Case Studies</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Get Started</h4>
-                    <a href="contact.html" class="inline-block bg-blue-accent text-white px-6 py-2 rounded-lg hover:bg-blue-light transition">
-                        Book Free Audit
+                    <a href="contact.html" class="btn-primary">
+                        Book Free Consultation
                     </a>
                 </div>
             </div>
@@ -500,139 +244,15 @@
             menu.classList.toggle('hidden');
         });
         
-        // Animated Counter
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000;
-            const increment = target / (duration / 16);
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 16);
-        }
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target.querySelector('.metric-counter');
-                    if (counter && !counter.classList.contains('counted')) {
-                        counter.classList.add('counted');
-                        animateCounter(counter);
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        // Observe metric counters
-        document.querySelectorAll('.metric-counter').forEach(counter => {
-            observer.observe(counter.closest('.bg-gray-soft'));
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
-        
-        // Before/After Charts
-        const beforeCtx = document.getElementById('beforeChart');
-        const afterCtx = document.getElementById('afterChart');
-        
-        if (beforeCtx && afterCtx) {
-            // Before Chart - Inconsistent, delayed data
-            new Chart(beforeCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-                    datasets: [{
-                        label: 'Revenue (Delayed)',
-                        data: [null, null, 45000, null, null, 52000],
-                        borderColor: 'rgb(239, 68, 68)',
-                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                        tension: 0.4,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: 'Manual Reporting: Delayed & Incomplete',
-                            font: { size: 14, weight: 'bold' }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return '$' + (value / 1000) + 'K';
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        duration: 2000
-                    }
-                }
-            });
-            
-            // After Chart - Real-time, smooth data
-            new Chart(afterCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-                    datasets: [{
-                        label: 'Revenue (Real-Time)',
-                        data: [42000, 45000, 48000, 51000, 52000, 55000],
-                        borderColor: 'rgb(34, 197, 94)',
-                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: 'Automated Reporting: Real-Time & Complete',
-                            font: { size: 14, weight: 'bold' }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return '$' + (value / 1000) + 'K';
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        duration: 2000
-                    }
-                }
-            });
-        }
     </script>
 </body>
 </html>
-
