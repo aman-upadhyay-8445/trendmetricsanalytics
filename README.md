@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-# ClarioDash Studio
+# TrendMetrics Intelligence
 
-**Clear Dashboards. Smart Decisions.**
+**Intelligent Analytics. Clear Decisions.**
 
-ClarioDash Studio is a premium analytics & dashboard consulting studio helping founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.
+TrendMetrics Intelligence transforms your data into actionable intelligence. We help founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.
 =======
 # TrendMetrics Intelligence
 
@@ -72,7 +72,7 @@ The contact form automatically saves submissions to Google Sheets and sends emai
 ## 📄 License
 
 <<<<<<< HEAD
-© 2024 ClarioDash Studio. All rights reserved.
+© 2024 TrendMetrics Intelligence. All rights reserved.
 =======
 © 2024 TrendMetrics Intelligence. All rights reserved.
 >>>>>>> c473985 (Initial commit: TrendMetrics Intelligence website)
@@ -85,7 +85,7 @@ The contact form automatically saves submissions to Google Sheets and sends emai
 ---
 
 <<<<<<< HEAD
-**Built with ❤️ by ClarioDash Studio**
+**Built with ❤️ by TrendMetrics Intelligence**
 =======
 **Built with ❤️ by TrendMetrics Intelligence**
 >>>>>>> c473985 (Initial commit: TrendMetrics Intelligence website)
