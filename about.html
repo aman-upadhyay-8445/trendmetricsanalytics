@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - TrendMetrics Intelligence</title>
+    <meta name="description" content="Learn about TrendMetrics Intelligence - transforming data into actionable intelligence. We help businesses automate reporting and make confident data-driven decisions.">
+    <meta property="og:title" content="About - TrendMetrics Intelligence">
+    <meta property="og:description" content="Learn about TrendMetrics Intelligence and our mission to transform data into actionable intelligence.">
+    <meta property="og:url" content="https://www.trendmetricsintelligence.com/about.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a5f',
+                        'navy-dark': '#0f1f35',
+                        'blue-accent': '#3b82f6',
+                        'blue-light': '#60a5fa',
+                        'gray-soft': '#f3f4f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .process-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .process-card:nth-child(1) { animation-delay: 0.1s; }
+        .process-card:nth-child(2) { animation-delay: 0.2s; }
+        .process-card:nth-child(3) { animation-delay: 0.3s; }
+        .process-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-navy">TrendMetrics Intelligence</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-navy font-medium">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-navy font-medium">Services</a>
+                    <a href="case-studies.html" class="text-gray-700 hover:text-navy font-medium">Case Studies</a>
+                    <a href="about.html" class="text-navy font-medium border-b-2 border-navy">About</a>
+                    <a href="contact.html" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-dark transition">Book Free Audit</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-navy">Home</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-navy">Services</a>
+                <a href="case-studies.html" class="block py-2 text-gray-700 hover:text-navy">Case Studies</a>
+                <a href="about.html" class="block py-2 text-navy font-medium">About</a>
+                <a href="contact.html" class="block bg-navy text-white px-6 py-2 rounded-lg text-center mt-4">Book Free Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-soft to-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-navy mb-6">About TrendMetrics Intelligence</h1>
+            <p class="text-xl text-gray-600">Intelligent Analytics. Clear Decisions.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-4xl font-bold text-navy mb-8">Our Story</h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    TrendMetrics Intelligence was born from a simple frustration: too many growing companies are drowning in Excel spreadsheets, making critical decisions on outdated data, and spending countless hours on manual reporting that should be automated.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    We've seen founders and operations teams waste 10+ hours per week compiling reports that are already outdated by the time they're finished. We've watched companies make million-dollar decisions based on last month's numbers because real-time data wasn't accessible.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    That's why we exist. We're not just another analytics agency—we're reporting automation specialists who understand that your time is better spent growing your business, not wrestling with spreadsheets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-navy text-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Mission</h2>
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+                <p class="text-2xl text-center leading-relaxed">
+                    TrendMetrics Intelligence helps businesses replace Excel chaos with automated intelligence. We transform raw data into actionable intelligence, giving founders real-time clarity on their business metrics without the manual work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-12">What We Stand For</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Business-First</h3>
+                    <p class="text-gray-600">
+                        Every dashboard and metric we build answers a real business question. No vanity metrics, only insights that drive decisions.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-6">⚡</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Automation First</h3>
+                    <p class="text-gray-600">
+                        We build systems that work without you. Set it once, get value forever. Your time is too valuable for manual reporting.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-6">🤝</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Partnership</h3>
+                    <p class="text-gray-600">
+                        We're not just vendors—we're your reporting automation partners. We grow with you and evolve your dashboards as your business changes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-soft">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-4">How We Work</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">A simple, proven process to transform your reporting</p>
+            
+            <!-- Process Timeline Visualization -->
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <canvas id="processChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md process-card">
+                    <div class="text-3xl font-bold text-blue-accent mb-4">01</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Free Reporting Audit</h3>
+                    <p class="text-gray-600">
+                        We start with a free audit of your current reporting setup. We'll identify pain points, opportunities, and create a roadmap for automation.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-card">
+                    <div class="text-3xl font-bold text-blue-accent mb-4">02</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Custom Solution Design</h3>
+                    <p class="text-gray-600">
+                        Based on your audit, we design a custom reporting automation solution tailored to your business needs and goals.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-card">
+                    <div class="text-3xl font-bold text-blue-accent mb-4">03</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Build & Deploy</h3>
+                    <p class="text-gray-600">
+                        We build your automated dashboards, integrate your data sources, and ensure everything works seamlessly before launch.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-card">
+                    <div class="text-3xl font-bold text-blue-accent mb-4">04</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Ongoing Support</h3>
+                    <p class="text-gray-600">
+                        We provide monthly support to keep your dashboards optimized, add new metrics as you grow, and ensure everything stays accurate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-accent to-blue-light">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to automate your reporting?</h2>
+            <p class="text-xl text-blue-50 mb-8">Start with a free reporting audit. No commitment, just insights.</p>
+            <a href="contact.html" class="inline-block bg-white text-navy px-10 py-4 rounded-lg text-lg font-semibold hover:bg-gray-soft transition shadow-xl">
+                Book Free Reporting Audit
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">TrendMetrics Intelligence</h3>
+                    <p class="text-gray-400">Intelligent Analytics. Clear Decisions.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Automated Reporting</a></li>
+                        <li><a href="services.html" class="hover:text-white">KPI Dashboards</a></li>
+                        <li><a href="services.html" class="hover:text-white">Funnel Analytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Get Started</h4>
+                    <a href="contact.html" class="inline-block bg-blue-accent text-white px-6 py-2 rounded-lg hover:bg-blue-light transition">
+                        Book Free Audit
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TrendMetrics Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Process Timeline Chart
+        const processCtx = document.getElementById('processChart');
+        if (processCtx) {
+            new Chart(processCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                    datasets: [{
+                        label: 'Project Progress',
+                        data: [0, 25, 50, 75, 90, 100],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Typical Project Timeline',
+                            font: { size: 18, weight: 'bold' },
+                            color: '#1e3a5f'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Progress: ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Completion %',
+                                font: { weight: 'bold' }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Timeline',
+                                font: { weight: 'bold' }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

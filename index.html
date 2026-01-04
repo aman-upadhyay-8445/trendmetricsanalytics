@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendMetrics Intelligence – Intelligent Analytics. Clear Decisions.</title>
+    <meta name="description" content="TrendMetrics Intelligence transforms your data into actionable intelligence. We help founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.">
+    <meta property="og:title" content="TrendMetrics Intelligence – Intelligent Analytics. Clear Decisions.">
+    <meta property="og:description" content="TrendMetrics Intelligence transforms your data into actionable intelligence. Premium analytics & dashboard consulting for growing businesses.">
+    <meta property="og:url" content="https://www.trendmetricsintelligence.com/">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a5f',
+                        'navy-dark': '#0f1f35',
+                        'blue-accent': '#3b82f6',
+                        'blue-light': '#60a5fa',
+                        'gray-soft': '#f3f4f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .flow-arrow {
+            position: relative;
+        }
+        
+        .flow-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #3b82f6;
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .flow-arrow::after {
+                display: none;
+            }
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        
+        .metric-counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .process-step {
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-navy">TrendMetrics Intelligence</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-navy font-medium">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-navy font-medium">Services</a>
+                    <a href="case-studies.html" class="text-gray-700 hover:text-navy font-medium">Case Studies</a>
+                    <a href="about.html" class="text-gray-700 hover:text-navy font-medium">About</a>
+                    <a href="contact.html" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-navy-dark transition">Book Free Audit</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-navy">Home</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-navy">Services</a>
+                <a href="case-studies.html" class="block py-2 text-gray-700 hover:text-navy">Case Studies</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-navy">About</a>
+                <a href="contact.html" class="block bg-navy text-white px-6 py-2 rounded-lg text-center mt-4">Book Free Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-soft to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
+                    Intelligent Analytics. Clear Decisions.
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                    TrendMetrics Intelligence transforms your data into actionable intelligence. We help founders and growing businesses automate reporting, visualize KPIs, and make confident data-driven decisions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-dark transition shadow-lg hover:shadow-xl">
+                        👉 Book Free Reporting Audit
+                    </a>
+                    <a href="case-studies.html" class="bg-white text-navy px-8 py-4 rounded-lg text-lg font-semibold border-2 border-navy hover:bg-gray-soft transition">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section with Visual Comparison -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-4">The Reporting Problem</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">See the difference between manual reporting and automated intelligence</p>
+            
+            <!-- Before/After Comparison -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-red-50 border-2 border-red-200 p-8 rounded-xl animate-slide-in-left">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold mr-3">BEFORE</span>
+                        <h3 class="text-2xl font-bold text-red-700">Manual Excel Reporting</h3>
+                    </div>
+                    <div class="chart-container mb-4">
+                        <canvas id="beforeChart"></canvas>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>4+ hours per week on manual data entry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>Data is 7-30 days old</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>High error rate from copy-paste</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 mr-2">✗</span>
+                            <span>No real-time visibility</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 border-2 border-green-200 p-8 rounded-xl animate-slide-in-right">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold mr-3">AFTER</span>
+                        <h3 class="text-2xl font-bold text-green-700">Automated Dashboards</h3>
+                    </div>
+                    <div class="chart-container mb-4">
+                        <canvas id="afterChart"></canvas>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>0 hours on manual work (100% automated)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Real-time data (updates hourly)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Zero errors from automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Always-on visibility</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold text-navy mb-3">Manual Excel Hell</h3>
+                    <p class="text-gray-600">Hours wasted on manual data entry, copy-paste errors, and outdated spreadsheets that nobody trusts.</p>
+                </div>
+                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h3 class="text-xl font-semibold text-navy mb-3">No Real-Time KPIs</h3>
+                    <p class="text-gray-600">Decisions made on last week's data. No visibility into what's happening right now in your business.</p>
+                </div>
+                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="text-4xl mb-4">🐌</div>
+                    <h3 class="text-xl font-semibold text-navy mb-3">Slow Decisions</h3>
+                    <p class="text-gray-600">By the time you get the numbers, the opportunity is gone. Reacting instead of acting proactively.</p>
+                </div>
+                <div class="bg-gray-soft p-8 rounded-xl animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="text-4xl mb-4">👻</div>
+                    <h3 class="text-xl font-semibold text-navy mb-3">Poor Visibility</h3>
+                    <p class="text-gray-600">Can't see revenue, costs, and growth trends clearly. Flying blind on critical business metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section with Flow Diagram -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-soft">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-4">The TrendMetrics Intelligence Solution</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">See how we transform your data into actionable insights</p>
+            
+            <!-- Automation Flow Diagram -->
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-16">
+                <h3 class="text-2xl font-bold text-navy text-center mb-8">How Our Automation Works</h3>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
+                        <div class="text-4xl mb-3">📊</div>
+                        <h4 class="font-semibold text-navy mb-2">Data Sources</h4>
+                        <p class="text-sm text-gray-600">CRM, Marketing Tools, Databases</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block"></div>
+                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
+                        <div class="text-4xl mb-3">⚙️</div>
+                        <h4 class="font-semibold text-navy mb-2">Automated Pipeline</h4>
+                        <p class="text-sm text-gray-600">SQL Processing & Transformation</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block"></div>
+                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
+                        <div class="text-4xl mb-3">📈</div>
+                        <h4 class="font-semibold text-navy mb-2">Live Dashboards</h4>
+                        <p class="text-sm text-gray-600">Real-Time KPIs & Insights</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block"></div>
+                    <div class="process-step bg-blue-50 p-6 rounded-xl text-center flex-1 border-2 border-blue-200">
+                        <div class="text-4xl mb-3">💡</div>
+                        <h4 class="font-semibold text-navy mb-2">Better Decisions</h4>
+                        <p class="text-sm text-gray-600">Actionable Intelligence</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">SQL-Based Reporting Automation</h3>
+                    <p class="text-gray-600">We build automated data pipelines that pull from your tools and databases, transforming raw data into actionable insights.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Executive KPI Dashboards</h3>
+                    <p class="text-gray-600">Founder-level clarity on sales, marketing, finance, and operations. See what matters in one glance.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Growth & Funnel Analytics</h3>
+                    <p class="text-gray-600">Track leads, conversions, CAC, ROI, and every step of your customer journey with precision.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md process-step">
+                    <div class="text-3xl mb-4">🔧</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Monthly Reporting Support</h3>
+                    <p class="text-gray-600">Ongoing monitoring, optimization, and maintenance to keep your dashboards accurate and valuable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Impact Metrics Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-12">The Impact of Automation</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center bg-gray-soft p-8 rounded-xl">
+                    <div class="metric-counter" data-target="100">0</div>
+                    <div class="text-2xl font-semibold text-navy mb-2">%</div>
+                    <p class="text-gray-600">Time Saved on Manual Reporting</p>
+                </div>
+                <div class="text-center bg-gray-soft p-8 rounded-xl">
+                    <div class="metric-counter" data-target="24">0</div>
+                    <div class="text-2xl font-semibold text-navy mb-2">/7</div>
+                    <p class="text-gray-600">Real-Time Data Availability</p>
+                </div>
+                <div class="text-center bg-gray-soft p-8 rounded-xl">
+                    <div class="metric-counter" data-target="95">0</div>
+                    <div class="text-2xl font-semibold text-navy mb-2">%</div>
+                    <p class="text-gray-600">Reduction in Reporting Errors</p>
+                </div>
+                <div class="text-center bg-gray-soft p-8 rounded-xl">
+                    <div class="metric-counter" data-target="3">0</div>
+                    <div class="text-2xl font-semibold text-navy mb-2">x</div>
+                    <p class="text-gray-600">Faster Decision Making</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-navy text-center mb-4">Our Services</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">Everything you need to replace Excel chaos with automated intelligence</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Automated Reporting Setup</h3>
+                    <p class="text-gray-600 mb-4">Live SQL dashboards that refresh automatically. Connect your data sources once, get insights forever.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Data pipeline automation</li>
+                        <li>• Multi-source integration</li>
+                        <li>• Real-time data refresh</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Executive KPI Dashboards</h3>
+                    <p class="text-gray-600 mb-4">Founder-level sales, marketing, finance & operations clarity. See your business health at a glance.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Custom KPI selection</li>
+                        <li>• Executive-level design</li>
+                        <li>• Mobile-responsive views</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">📉</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Growth & Funnel Analytics</h3>
+                    <p class="text-gray-600 mb-4">Track leads, conversions, CAC, ROI. Understand every step of your customer journey.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Conversion funnel tracking</li>
+                        <li>• CAC & ROI analysis</li>
+                        <li>• Cohort analysis</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-blue-accent hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h3 class="text-2xl font-semibold text-navy mb-4">Monthly Reporting Support</h3>
+                    <p class="text-gray-600 mb-4">Ongoing monitoring & optimization. We keep your dashboards accurate and valuable.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Monthly health checks</li>
+                        <li>• Dashboard optimization</li>
+                        <li>• New metric additions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why TrendMetrics Intelligence Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-navy text-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Why TrendMetrics Intelligence</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3">Business-First Dashboards</h3>
+                    <p class="text-gray-300">Built for founders, not data scientists. Every metric answers a real business question.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-3">Automated Pipelines</h3>
+                    <p class="text-gray-300">Set it and forget it. Your data flows automatically, no manual work required.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3">Clean Visual Design</h3>
+                    <p class="text-gray-300">Beautiful, intuitive dashboards that your team will actually want to use.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💡</div>
+                    <h3 class="text-xl font-semibold mb-3">Actionable KPIs</h3>
+                    <p class="text-gray-300">Every metric is tied to a decision. No vanity metrics, only insights that drive growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-accent to-blue-light">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Get your free reporting audit and growth roadmap.</h2>
+            <p class="text-xl text-blue-50 mb-8">See how automated reporting can transform your decision-making process.</p>
+            <a href="contact.html" class="inline-block bg-white text-navy px-10 py-4 rounded-lg text-lg font-semibold hover:bg-gray-soft transition shadow-xl">
+                Book a Call
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">TrendMetrics Intelligence</h3>
+                    <p class="text-gray-400">Intelligent Analytics. Clear Decisions.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Automated Reporting</a></li>
+                        <li><a href="services.html" class="hover:text-white">KPI Dashboards</a></li>
+                        <li><a href="services.html" class="hover:text-white">Funnel Analytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Get Started</h4>
+                    <a href="contact.html" class="inline-block bg-blue-accent text-white px-6 py-2 rounded-lg hover:bg-blue-light transition">
+                        Book Free Audit
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TrendMetrics Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Animated Counter
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.metric-counter');
+                    if (counter && !counter.classList.contains('counted')) {
+                        counter.classList.add('counted');
+                        animateCounter(counter);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe metric counters
+        document.querySelectorAll('.metric-counter').forEach(counter => {
+            observer.observe(counter.closest('.bg-gray-soft'));
+        });
+        
+        // Before/After Charts
+        const beforeCtx = document.getElementById('beforeChart');
+        const afterCtx = document.getElementById('afterChart');
+        
+        if (beforeCtx && afterCtx) {
+            // Before Chart - Inconsistent, delayed data
+            new Chart(beforeCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                    datasets: [{
+                        label: 'Revenue (Delayed)',
+                        data: [null, null, 45000, null, null, 52000],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Manual Reporting: Delayed & Incomplete',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000) + 'K';
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000
+                    }
+                }
+            });
+            
+            // After Chart - Real-time, smooth data
+            new Chart(afterCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                    datasets: [{
+                        label: 'Revenue (Real-Time)',
+                        data: [42000, 45000, 48000, 51000, 52000, 55000],
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Automated Reporting: Real-Time & Complete',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000) + 'K';
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
