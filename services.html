@@ -1,74 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/logo/shield-icon.svg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services – TrendMetrics Intelligence</title>
-<link rel="stylesheet" href="css/brand.css">
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo/shield-icon.svg">
+    <link rel="shortcut icon" href="/logo/shield-icon.svg">
+    <link rel="apple-touch-icon" href="/logo/shield-icon.svg">
+    <meta name="theme-color" content="#0b1a33">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services – TrendMetrics Intelligence</title>
+    <meta name="description" content="Enterprise-grade analytics & automation consulting services. From data analytics to process automation, we deliver solutions that drive measurable business outcomes.">
+    <link rel="stylesheet" href="css/brand.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-black': '#111111',
+                        'secondary-navy': '#0B1C33',
+                        'accent-gold': '#F5A623',
+                        'bg-light': '#F7F8FA',
+                        'text-primary': '#1A1A1A',
+                        'text-secondary': '#666666',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0B1C33 0%, #1a3a5c 100%);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 28, 51, 0.15);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
 
 <body class="bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <a href="index.html" class="brand-logo">
+                    <svg height="48" width="48" viewBox="240 250 150 150" class="md:h-12 h-10 transition-all duration-300">
+                        <path fill="#111111" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                        <path fill="#111111" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                    </svg>
+                    <div class="brand-logo-text">
+                        <span class="brand-logo-main">Trendmetrics</span>
+                        <span class="brand-logo-sub">INTELLIGENCE</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-text-secondary hover:text-primary-black font-medium transition">Home</a>
+                    <a href="services.html" class="text-text-primary hover:text-primary-black font-medium transition">Services</a>
+                    <a href="case-studies.html" class="text-text-secondary hover:text-primary-black font-medium transition">Case Studies</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary-black font-medium transition">About</a>
+                    <a href="contact.html" class="btn-primary">Book Free Audit</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Home</a>
+                <a href="services.html" class="block py-2 text-text-primary hover:text-primary-black transition">Services</a>
+                <a href="case-studies.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Case Studies</a>
+                <a href="about.html" class="block py-2 text-text-secondary hover:text-primary-black transition">About</a>
+                <a href="contact.html" class="block btn-primary text-center mt-4">Book Free Audit</a>
+            </div>
+        </div>
+    </nav>
 
-<!-- NAVBAR -->
-<nav class="navbar fixed w-full top-0 z-50 bg-white">
-<div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
-<a href="index.html" class="brand-logo flex items-center gap-3">
-<img src="/logo/file (1).svg" class="h-10">
-<div>
-<span class="brand-logo-main">Trendmetrics</span>
-<span class="brand-logo-sub">INTELLIGENCE</span>
-</div>
-</a>
-<div class="hidden md:flex gap-8">
-<a href="index.html">Home</a>
-<a href="services.html" class="font-bold">Services</a>
-<a href="case-studies.html">Case Studies</a>
-<a href="about.html">About</a>
-<a href="contact.html" class="btn-primary">Book Free Audit</a>
-</div>
-</div>
-</nav>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="hero-headline mb-6">
+                    Our <span class="intelligence-accent">Services</span>
+                </h1>
+                <p class="hero-subtext">
+                    Enterprise-grade analytics & automation consulting designed to drive measurable business outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section class="pt-40 pb-24 text-center max-w-5xl mx-auto">
-<h1 class="hero-headline">Our Services</h1>
-<p class="hero-subtext">Enterprise-grade analytics & automation consulting</p>
-</section>
+    <!-- Core Services -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Core Services</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Comprehensive solutions for data-driven organizations</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card animate-fade-in-up">
+                    <div class="service-icon">📊</div>
+                    <h3 class="text-2xl font-semibold mb-4">Data Analytics</h3>
+                    <p class="text-text-secondary mb-4">Transform raw data into actionable insights with custom analytics pipelines, advanced SQL optimization, Python-based analysis, and automated reporting systems.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• Custom analytics frameworks</li>
+                        <li>• SQL & Python optimization</li>
+                        <li>• Automated reporting</li>
+                        <li>• Data visualization</li>
+                    </ul>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="text-2xl font-semibold mb-4">Process Automation</h3>
+                    <p class="text-text-secondary mb-4">Eliminate manual workflows and boost efficiency with intelligent automation for Google Sheets, CRM systems, operations, and finance processes.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• Workflow automation</li>
+                        <li>• CRM integration</li>
+                        <li>• Finance automation</li>
+                        <li>• Operations optimization</li>
+                    </ul>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="service-icon">📈</div>
+                    <h3 class="text-2xl font-semibold mb-4">KPI Dashboards</h3>
+                    <p class="text-text-secondary mb-4">Executive-level dashboards with real-time performance monitoring, interactive visualizations, and customizable KPI tracking for data-driven decision making.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• Real-time monitoring</li>
+                        <li>• Executive scorecards</li>
+                        <li>• Interactive visualizations</li>
+                        <li>• Custom KPI tracking</li>
+                    </ul>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="text-2xl font-semibold mb-4">System Integration</h3>
+                    <p class="text-text-secondary mb-4">Seamlessly connect your data ecosystem with API integrations, database connections, CRM linkage, marketing automation, and ERP system integration.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• API development</li>
+                        <li>• Database integration</li>
+                        <li>• CRM & marketing systems</li>
+                        <li>• ERP connectivity</li>
+                    </ul>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.4s">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="text-2xl font-semibold mb-4">Cloud Data Warehousing</h3>
+                    <p class="text-text-secondary mb-4">Build scalable data infrastructure with BigQuery, Redshift, and Snowflake. Implement ETL pipelines, data modeling, and performance optimization.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• BigQuery & Snowflake setup</li>
+                        <li>• ETL pipeline development</li>
+                        <li>• Data modeling</li>
+                        <li>• Performance tuning</li>
+                    </ul>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.5s">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="text-2xl font-semibold mb-4">Decision Intelligence</h3>
+                    <p class="text-text-secondary mb-4">Leverage predictive analytics, forecasting models, machine learning insights, and scenario planning to make smarter strategic decisions.</p>
+                    <ul class="text-sm text-text-secondary space-y-2">
+                        <li>• Predictive analytics</li>
+                        <li>• Forecasting models</li>
+                        <li>• ML-powered insights</li>
+                        <li>• Scenario planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section-padding section-bg-light">
-<div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-<div class="card">
-<h3>Data Analytics</h3>
-<p>Custom analytics pipelines, dashboards, SQL, Python & reporting automation.</p>
-</div>
-<div class="card">
-<h3>Process Automation</h3>
-<p>Workflow automation for Sheets, CRM, Ops & finance.</p>
-</div>
-<div class="card">
-<h3>KPI Dashboards</h3>
-<p>Real-time executive dashboards & performance scorecards.</p>
-</div>
-<div class="card">
-<h3>System Integration</h3>
-<p>APIs, databases, CRMs, marketing & ERP integrations.</p>
-</div>
-<div class="card">
-<h3>Cloud Data Warehousing</h3>
-<p>BigQuery, Redshift, Snowflake pipelines.</p>
-</div>
-<div class="card">
-<h3>Decision Intelligence</h3>
-<p>Predictive analytics & forecasting systems.</p>
-</div>
-</div>
-</section>
+    <!-- Process Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Process</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">A proven methodology for delivering exceptional results</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-navy text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Discovery</h3>
+                    <p class="text-text-secondary">Deep dive into your business needs, data landscape, and objectives.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-navy text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Strategy</h3>
+                    <p class="text-text-secondary">Design a tailored solution architecture and implementation roadmap.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-navy text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Implementation</h3>
+                    <p class="text-text-secondary">Build and deploy solutions with rigorous testing and quality assurance.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-navy text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-semibold mb-3">Optimization</h3>
+                    <p class="text-text-secondary">Continuous monitoring, refinement, and support for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section-padding text-center">
-<h2 class="text-4xl font-bold mb-4">Book Your Free Data Audit</h2>
-<a href="contact.html" class="btn-primary">Book Free Audit</a>
-</section>
+    <!-- CTA Section -->
+    <section class="section-padding section-bg-navy">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Transform Your Data Strategy?</h2>
+            <p class="text-xl text-gray-300 mb-8">Book a free data audit and discover how we can help you unlock the full potential of your data.</p>
+            <a href="contact.html" class="btn-primary">
+                Book Free Data Audit
+            </a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-secondary-navy text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="brand-logo mb-4">
+                        <svg height="40" width="40" viewBox="240 250 150 150" class="h-10">
+                            <path fill="#FFFFFF" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                            <path fill="#FFFFFF" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                        </svg>
+                        <div class="brand-logo-text">
+                            <span class="brand-logo-main" style="color: #FFFFFF;">Trendmetrics</span>
+                            <span class="brand-logo-sub" style="color: #FFFFFF;">INTELLIGENCE</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm">Premium Analytics & Automation Intelligence</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition">Data Analytics</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Process Automation</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">KPI Dashboards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Get Started</h4>
+                    <a href="contact.html" class="btn-primary">
+                        Book Free Consultation
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TrendMetrics Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-<!-- test push Aman -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,6 +62,264 @@
             font-weight: 700;
             color: #0B1C33;
         }
+        
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+                visibility: hidden;
+            }
+            5% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+                visibility: visible;
+            }
+            30% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+                visibility: visible;
+            }
+            35% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+                visibility: hidden;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+                visibility: hidden;
+            }
+        }
+        
+        .rotating-text {
+            display: inline-block;
+            position: relative;
+            min-width: 400px;
+            text-align: center;
+            height: 1.3em;
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+        
+        .rotating-text-word {
+            position: absolute;
+            left: 50%;
+            opacity: 0;
+            visibility: hidden;
+            animation: fadeInOut 9s infinite;
+            color: #0B1C33;
+            font-weight: 800;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #0B1C33 0%, #1a3d66 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 4px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: inherit;
+            pointer-events: none;
+        }
+        
+        .rotating-text-word:nth-child(1) { 
+            animation-delay: 0s; 
+        }
+        .rotating-text-word:nth-child(2) { 
+            animation-delay: 3s; 
+        }
+        .rotating-text-word:nth-child(3) { 
+            animation-delay: 6s; 
+        }
+        
+        @media (max-width: 768px) {
+            .rotating-text {
+                min-width: 100%;
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .rotating-text-word {
+                left: 50%;
+            }
+        }
+        
+        /* Dashboard Preview */
+        .dashboard-preview {
+            background: linear-gradient(135deg, #0B1C33 0%, #1a2d4d 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 5rem;
+            box-shadow: 0 20px 60px rgba(11, 28, 51, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .dashboard-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F5A623, #ffc966);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(245, 166, 35, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(245, 166, 35, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+        
+        .stat-value {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-change {
+            color: #4ade80;
+            font-size: 0.9375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-weight: 500;
+        }
+        
+        .stat-change.down {
+            color: #f87171;
+        }
+        
+        .dashboard-chart {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .chart-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-preview {
+                padding: 2rem 1.5rem;
+                margin-top: 3rem;
+            }
+            
+            .dashboard-stats {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.875rem;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .dashboard-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 166, 35, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -107,22 +363,155 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-5xl mx-auto">
+            <div class="text-center max-w-6xl mx-auto">
                 <h1 class="hero-headline mb-6">
-                    Premium Analytics & Automation <span class="intelligence-accent">Intelligence</span>
+                    The AI analytics platform for<br>
+                    <span class="rotating-text">
+                        <span class="rotating-text-word">AI-enhanced insights</span>
+                        <span class="rotating-text-word">intelligent automation</span>
+                        <span class="rotating-text-word">data-driven decisions</span>
+                    </span>
                 </h1>
-                <p class="hero-subtext">
-                    We build data systems that power smarter decisions, faster growth, and automation-led efficiency.
+                <p class="hero-subtext mb-8">
+                    Get the unfair AI advantage your business needs to grow relentlessly. We design data systems, dashboards, and automation pipelines enhanced with AI that help companies grow faster, smarter, and leaner.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                     <a href="contact.html" class="btn-primary">
-                        Book Free Audit
+                        Get Free Data Consultation
                     </a>
                     <a href="case-studies.html" class="btn-secondary">
                         View Case Studies
                     </a>
+                </div>
+                
+                <!-- Animated Dashboard Preview -->
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">AI-Enhanced Analytics Dashboard</div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <div class="text-white text-sm opacity-70">Live Data</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Stats Grid -->
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Revenue Growth</div>
+                            <div class="stat-value">$2.4M</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                24% vs last month
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">AI Insights Generated</div>
+                            <div class="stat-value">1,247</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                18% this week
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Automation Efficiency</div>
+                            <div class="stat-value">94%</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                12% improvement
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Decision Speed</div>
+                            <div class="stat-value">3.2x</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                Faster with AI
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-value">12.4K</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                8% growth
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg class="w-6 h-6 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-label">Data Accuracy</div>
+                            <div class="stat-value">99.7%</div>
+                            <div class="stat-change">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                AI-verified
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Section -->
+                    <div class="dashboard-chart">
+                        <div class="chart-placeholder w-full">
+                            <div class="text-white text-base mb-6 opacity-80 font-medium">Revenue Trend (Last 12 Months)</div>
+                            <svg width="100%" height="260" viewBox="0 0 600 260" class="opacity-85">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#F5A623;stop-opacity:0.4" />
+                                        <stop offset="100%" style="stop-color:#F5A623;stop-opacity:0" />
+                                    </linearGradient>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#0B1C33;stop-opacity:0.3" />
+                                        <stop offset="100%" style="stop-color:#0B1C33;stop-opacity:0" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Grid lines -->
+                                <line x1="50" y1="50" x2="50" y2="200" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                                <line x1="50" y1="200" x2="550" y2="200" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                                <!-- Revenue line -->
+                                <polyline points="50,180 100,170 150,150 200,130 250,110 300,90 350,75 400,65 450,55 500,50 550,45" 
+                                    fill="none" stroke="#F5A623" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="50,180 100,170 150,150 200,130 250,110 300,90 350,75 400,65 450,55 500,50 550,45 550,200 50,200" 
+                                    fill="url(#grad1)" />
+                                <!-- AI Insights line -->
+                                <polyline points="50,190 100,185 150,175 200,160 250,145 300,130 350,115 400,100 450,85 500,70 550,60" 
+                                    fill="none" stroke="#0B1C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                                <polyline points="50,190 100,185 150,175 200,160 250,145 300,130 350,115 400,100 450,85 500,70 550,60 550,200 50,200" 
+                                    fill="url(#grad2)" />
+                                <!-- Data points -->
+                                <circle cx="550" cy="45" r="5" fill="#F5A623" />
+                                <circle cx="550" cy="60" r="4" fill="#0B1C33" opacity="0.6" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,6 +549,334 @@
         </div>
     </section>
 
+    <!-- Solving Challenges Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Data Can Solve Your Business Challenges</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">We identify your data challenges and deliver AI-enhanced solutions that drive measurable business outcomes</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border-l-4 border-accent-gold pl-6 py-4">
+                    <h3 class="text-xl font-bold mb-3">Data Analytics Solutions for Under-Resourced Teams</h3>
+                    <p class="text-text-secondary">TrendMetrics Intelligence offers AI-enhanced data analytics services that ensure data integrity. Data teams receive support for everything they need to perform data quality functions — cleansing, normalization, validation and integration — with increased task automation powered by machine learning.</p>
+                </div>
+                <div class="border-l-4 border-accent-gold pl-6 py-4">
+                    <h3 class="text-xl font-bold mb-3">Siloed, Fragmented Data Sets Hinder Innovation</h3>
+                    <p class="text-text-secondary">Our AI-powered business data analytics solutions create a single source of truth, allowing companies to adopt more data-centric, service-driven approaches to data provision across the enterprise. Companies now engage in advanced analytics for decisioning with AI-enhanced insights.</p>
+                </div>
+                <div class="border-l-4 border-accent-gold pl-6 py-4">
+                    <h3 class="text-xl font-bold mb-3">Engineering Becomes Business-Value First</h3>
+                    <p class="text-text-secondary">Business users and engineers collaborate on business use cases, add value to datasets and bring the company into a data-driven decision-making era. Technology initiatives align with business goals and further value opportunities through AI-powered automation.</p>
+                </div>
+                <div class="border-l-4 border-accent-gold pl-6 py-4">
+                    <h3 class="text-xl font-bold mb-3">Logical Data Governance for Compliance</h3>
+                    <p class="text-text-secondary">TrendMetrics Intelligence designs governance processes that open data for stakeholders to use. They address regulatory compliance and ensure that companies keep sensitive data safe without locking it away in insight-killing silos, enhanced with AI-powered security monitoring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Value Pillars -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Enterprise-Grade AI Analytics</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Powered by advanced AI to deliver insights that drive business growth</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card animate-fade-in-up">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Data Analytics & BI</h3>
+                    <p class="text-text-secondary">AI-enhanced analytics that transform raw data into strategic insights. Machine learning models identify patterns, predict trends, and surface actionable intelligence automatically.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Automation Systems</h3>
+                    <p class="text-text-secondary">Intelligent automation pipelines powered by AI that learn and optimize over time. Reduce manual work by 90% while improving accuracy and speed.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Business Performance Intelligence</h3>
+                    <p class="text-text-secondary">AI-driven dashboards that provide real-time performance metrics with predictive analytics. Get ahead of trends before they impact your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Why Companies Trust TrendMetrics Intelligence</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Enterprise-grade solutions enhanced with cutting-edge AI technology</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card animate-fade-in-up">
+                    <div class="w-12 h-12 bg-accent-gold rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Decision-Grade Dashboards</h3>
+                    <p class="text-text-secondary">AI-powered dashboards that surface the insights you need, when you need them. No more data hunting—just answers.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="w-12 h-12 bg-accent-gold rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Automation-First Approach</h3>
+                    <p class="text-text-secondary">AI-driven automation that learns from your data patterns. Set it once, optimize forever.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 bg-accent-gold rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">ROI-Focused Implementation</h3>
+                    <p class="text-text-secondary">Every AI enhancement is measured against business outcomes. We prove value before scaling.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="w-12 h-12 bg-accent-gold rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Secure & Scalable Systems</h3>
+                    <p class="text-text-secondary">Enterprise-grade security with AI that scales with your business. Built for growth, secured for compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Our AI-Enhanced Services</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Enterprise-grade analytics and automation solutions powered by artificial intelligence</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card animate-fade-in-up">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Data Analytics</h3>
+                    <p class="text-text-secondary">Machine learning models analyze your data to uncover hidden patterns, predict trends, and generate actionable insights automatically.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Intelligent Automation</h3>
+                    <p class="text-text-secondary">AI-powered workflows that learn from your processes and optimize themselves over time, reducing manual work by up to 90%.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI-Powered Dashboards</h3>
+                    <p class="text-text-secondary">Executive dashboards enhanced with AI that surface critical insights, anomalies, and recommendations in real-time.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Predictive Analytics</h3>
+                    <p class="text-text-secondary">AI models forecast business outcomes, identify risks, and recommend actions before issues impact your bottom line.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.4s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Natural Language Queries</h3>
+                    <p class="text-text-secondary">Ask questions in plain English. Our AI understands context and delivers answers instantly from your data.</p>
+                </div>
+                <div class="card animate-fade-in-up" style="animation-delay: 0.5s">
+                    <div class="w-12 h-12 bg-secondary-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">System Integration</h3>
+                    <p class="text-text-secondary">AI-enhanced integrations that automatically map, transform, and sync data across your entire tech stack.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Stats Section -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">TrendMetrics Intelligence in Numbers</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Proven expertise in delivering enterprise-grade AI analytics solutions</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="animate-fade-in-up">
+                    <div class="text-6xl md:text-7xl font-bold text-accent-gold mb-4" data-count="10">10+</div>
+                    <div class="text-xl font-semibold text-text-primary mb-2">Years of Experience</div>
+                    <p class="text-text-secondary">Delivering AI-enhanced analytics and automation solutions</p>
+                </div>
+                <div class="animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="text-6xl md:text-7xl font-bold text-accent-gold mb-4" data-count="250">250+</div>
+                    <div class="text-xl font-semibold text-text-primary mb-2">Projects Completed</div>
+                    <p class="text-text-secondary">Successful data analytics and automation implementations</p>
+                </div>
+                <div class="animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="text-6xl md:text-7xl font-bold text-accent-gold mb-4" data-count="150">150+</div>
+                    <div class="text-xl font-semibold text-text-primary mb-2">Enterprise Clients</div>
+                    <p class="text-text-secondary">Trusted by leading organizations worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Journey Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">The Journey to Enterprise Analytics</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Our aim is to help organizations move toward high-value enterprise analytics, no matter where they are in their journey</p>
+            </div>
+            <div class="relative py-12">
+                <!-- Journey Diagram -->
+                <div class="journey-container relative max-w-5xl mx-auto">
+                    <svg width="100%" height="600" viewBox="0 0 800 600" class="journey-svg">
+                        <!-- Background -->
+                        <defs>
+                            <linearGradient id="journeyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0B1C33;stop-opacity:0.1" />
+                                <stop offset="100%" style="stop-color:#F5A623;stop-opacity:0.05" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#journeyGrad)" rx="20"/>
+                        
+                        <!-- Journey Path -->
+                        <path id="journeyPath" d="M 100 500 Q 200 400 300 350 T 500 250 T 700 150" 
+                              fill="none" stroke="#F5A623" stroke-width="4" stroke-dasharray="5,5" opacity="0.6"/>
+                        
+                        <!-- Step 1 -->
+                        <g class="journey-step" data-step="1">
+                            <rect x="50" y="450" width="100" height="100" rx="8" fill="#0B1C33" opacity="0.8"/>
+                            <text x="100" y="505" text-anchor="middle" fill="white" font-size="14" font-weight="600">Consolidation</text>
+                            <text x="100" y="525" text-anchor="middle" fill="white" font-size="14" font-weight="600">&amp; Curation</text>
+                            <circle cx="100" cy="400" r="20" fill="#F5A623"/>
+                            <text x="100" y="407" text-anchor="middle" fill="white" font-size="16" font-weight="bold">1</text>
+                        </g>
+                        
+                        <!-- Step 2 -->
+                        <g class="journey-step" data-step="2">
+                            <rect x="200" y="400" width="100" height="100" rx="8" fill="#0B1C33" opacity="0.8"/>
+                            <text x="250" y="455" text-anchor="middle" fill="white" font-size="14" font-weight="600">Democratization</text>
+                            <circle cx="250" cy="350" r="20" fill="#F5A623"/>
+                            <text x="250" y="357" text-anchor="middle" fill="white" font-size="16" font-weight="bold">2</text>
+                        </g>
+                        
+                        <!-- Step 3 -->
+                        <g class="journey-step" data-step="3">
+                            <rect x="350" y="300" width="100" height="100" rx="8" fill="#0B1C33" opacity="0.8"/>
+                            <text x="400" y="355" text-anchor="middle" fill="white" font-size="14" font-weight="600">Self-Service</text>
+                            <text x="400" y="375" text-anchor="middle" fill="white" font-size="14" font-weight="600">Analytics</text>
+                            <circle cx="400" cy="250" r="20" fill="#F5A623"/>
+                            <text x="400" y="257" text-anchor="middle" fill="white" font-size="16" font-weight="bold">3</text>
+                        </g>
+                        
+                        <!-- Step 4 -->
+                        <g class="journey-step" data-step="4">
+                            <rect x="500" y="200" width="100" height="100" rx="8" fill="#0B1C33" opacity="0.8"/>
+                            <text x="550" y="255" text-anchor="middle" fill="white" font-size="14" font-weight="600">AI/ML &amp;</text>
+                            <text x="550" y="275" text-anchor="middle" fill="white" font-size="14" font-weight="600">Pervasive</text>
+                            <circle cx="550" cy="150" r="20" fill="#F5A623"/>
+                            <text x="550" y="157" text-anchor="middle" fill="white" font-size="16" font-weight="bold">4</text>
+                        </g>
+                        
+                        <!-- Final Destination -->
+                        <g class="journey-step" data-step="5">
+                            <circle cx="700" cy="100" r="60" fill="#F5A623" opacity="0.9"/>
+                            <text x="700" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">THE</text>
+                            <text x="700" y="110" text-anchor="middle" fill="white" font-size="12" font-weight="bold">INSIGHTS-</text>
+                            <text x="700" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">POWERED</text>
+                            <text x="700" y="140" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ORGANIZATION</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding section-bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Our Consulting Framework</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">A proven methodology enhanced with AI to deliver faster, smarter results</p>
+            </div>
+            <div class="grid md:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-black">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Diagnose</h3>
+                    <p class="text-gray-300 text-sm">AI analyzes your current data infrastructure and identifies optimization opportunities.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-black">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Design</h3>
+                    <p class="text-gray-300 text-sm">AI-powered architecture recommendations tailored to your business goals.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-black">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Build</h3>
+                    <p class="text-gray-300 text-sm">Rapid deployment with AI-assisted development and automated testing.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-black">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Optimize</h3>
+                    <p class="text-gray-300 text-sm">Continuous AI monitoring and optimization to maximize performance.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary-black">5</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Scale</h3>
+                    <p class="text-gray-300 text-sm">AI-driven scaling that adapts to your growth automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us -->
     <section class="section-padding section-bg-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,12 +905,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding bg-white">
+    <section class="section-padding section-bg-navy py-16">
         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Data Strategy?</h2>
-            <p class="text-xl text-text-secondary mb-8">Schedule a consultation to discuss your analytics and automation needs.</p>
-            <a href="contact.html" class="btn-primary">
-                Book Free Consultation
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Want Similar Results?</h2>
+            <p class="text-xl text-gray-300 mb-8">Book a free data audit and discover how we can transform your analytics and automation strategy.</p>
+            <a href="contact.html" class="btn-primary text-lg px-8 py-4">
+                Book Free Data Audit
             </a>
         </div>
     </section>
@@ -233,9 +950,39 @@
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Get Started</h4>
-                    <a href="contact.html" class="btn-primary">
+                    <a href="contact.html" class="btn-primary mb-6">
                         Book Free Consultation
                     </a>
+                    <div>
+                        <h4 class="font-semibold mb-4">Connect With Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-accent-gold transition" aria-label="LinkedIn">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-accent-gold transition" aria-label="Twitter">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-accent-gold transition" aria-label="Facebook">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-accent-gold transition" aria-label="YouTube">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-accent-gold transition" aria-label="GitHub">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
@@ -259,6 +1006,108 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+        
+        // Animated Counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current) + '+';
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        
+        // Initialize counters on load
+        animateCounters();
+        
+        // Animated Dashboard Stats
+        function animateDashboardStats() {
+            const statValues = document.querySelectorAll('.stat-value');
+            
+            // Simulate live data updates
+            setInterval(() => {
+                statValues.forEach((stat, index) => {
+                    const currentText = stat.textContent;
+                    let newValue;
+                    
+                    switch(index) {
+                        case 0: // Revenue
+                            const revenue = parseFloat(currentText.replace(/[^0-9.]/g, '')) || 0;
+                            const newRevenue = Math.max(0, (revenue + (Math.random() * 0.1 - 0.05)).toFixed(1));
+                            stat.textContent = '$' + newRevenue + 'M';
+                            break;
+                        case 1: // AI Insights
+                            // Handle comma-separated numbers properly
+                            const insightsText = currentText.replace(/,/g, '');
+                            const insights = parseInt(insightsText) || 0;
+                            const newInsights = Math.max(0, insights + Math.floor(Math.random() * 5));
+                            stat.textContent = newInsights.toLocaleString();
+                            break;
+                        case 2: // Efficiency
+                            const efficiency = parseFloat(currentText.replace(/[^0-9.]/g, '')) || 0;
+                            const newEfficiency = Math.max(0, Math.min(100, (efficiency + (Math.random() * 0.2 - 0.1)).toFixed(1)));
+                            stat.textContent = newEfficiency + '%';
+                            break;
+                        case 3: // Decision Speed
+                            const speed = parseFloat(currentText.replace(/[^0-9.]/g, '')) || 0;
+                            const newSpeed = Math.max(0.1, (speed + (Math.random() * 0.1 - 0.05)).toFixed(1));
+                            stat.textContent = newSpeed + 'x';
+                            break;
+                        case 4: // Active Users
+                            const users = parseFloat(currentText.replace(/[^0-9.]/g, '')) || 0;
+                            const newUsers = Math.max(0, (users + (Math.random() * 0.2 - 0.1)).toFixed(1));
+                            stat.textContent = newUsers + 'K';
+                            break;
+                        case 5: // Data Accuracy
+                            const accuracy = parseFloat(currentText.replace(/[^0-9.]/g, '')) || 0;
+                            const newAccuracy = Math.max(0, Math.min(100, (accuracy + (Math.random() * 0.05 - 0.025)).toFixed(2)));
+                            stat.textContent = newAccuracy + '%';
+                            break;
+                    }
+                });
+            }, 4000);
+        }
+        
+        // Initialize dashboard animation when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', animateDashboardStats);
+        } else {
+            animateDashboardStats();
+        }
+        
+        // Add subtle pulse animation to dashboard cards
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.animation = 'pulse 3s ease-in-out infinite';
+                card.style.animationDelay = (index * 0.5) + 's';
+            }, 1000);
         });
     </script>
 </body>

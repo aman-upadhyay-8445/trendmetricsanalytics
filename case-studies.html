@@ -1,61 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/logo/shield-icon.svg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies – TrendMetrics Intelligence</title>
-<link rel="stylesheet" href="css/brand.css">
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo/shield-icon.svg">
+    <link rel="shortcut icon" href="/logo/shield-icon.svg">
+    <link rel="apple-touch-icon" href="/logo/shield-icon.svg">
+    <meta name="theme-color" content="#0b1a33">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies – TrendMetrics Intelligence</title>
+    <meta name="description" content="Real automation & analytics results. See how we've helped businesses achieve 85% time savings, 42% efficiency improvements, and 2.3× conversion increases.">
+    <link rel="stylesheet" href="css/brand.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-black': '#111111',
+                        'secondary-navy': '#0B1C33',
+                        'accent-gold': '#F5A623',
+                        'bg-light': '#F7F8FA',
+                        'text-primary': '#1A1A1A',
+                        'text-secondary': '#666666',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .case-study-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #0B1C33;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 28, 51, 0.15);
+            border-left-color: #F5A623;
+        }
+        
+        .metric-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0B1C33 0%, #1a3a5c 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-tag {
+            display: inline-block;
+            background: #F7F8FA;
+            color: #666666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body class="bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <a href="index.html" class="brand-logo">
+                    <svg height="48" width="48" viewBox="240 250 150 150" class="md:h-12 h-10 transition-all duration-300">
+                        <path fill="#111111" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                        <path fill="#111111" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                    </svg>
+                    <div class="brand-logo-text">
+                        <span class="brand-logo-main">Trendmetrics</span>
+                        <span class="brand-logo-sub">INTELLIGENCE</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-text-secondary hover:text-primary-black font-medium transition">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary-black font-medium transition">Services</a>
+                    <a href="case-studies.html" class="text-text-primary hover:text-primary-black font-medium transition">Case Studies</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary-black font-medium transition">About</a>
+                    <a href="contact.html" class="btn-primary">Book Free Audit</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Home</a>
+                <a href="services.html" class="block py-2 text-text-secondary hover:text-primary-black transition">Services</a>
+                <a href="case-studies.html" class="block py-2 text-text-primary hover:text-primary-black transition">Case Studies</a>
+                <a href="about.html" class="block py-2 text-text-secondary hover:text-primary-black transition">About</a>
+                <a href="contact.html" class="block btn-primary text-center mt-4">Book Free Audit</a>
+            </div>
+        </div>
+    </nav>
 
-<nav class="navbar fixed w-full top-0 z-50 bg-white">
-<div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
-<a href="index.html" class="brand-logo flex items-center gap-3">
-<img src="/logo/file (1).svg" class="h-10">
-<div>
-<span class="brand-logo-main">Trendmetrics</span>
-<span class="brand-logo-sub">INTELLIGENCE</span>
-</div>
-</a>
-<div class="hidden md:flex gap-8">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="case-studies.html" class="font-bold">Case Studies</a>
-<a href="about.html">About</a>
-<a href="contact.html" class="btn-primary">Book Free Audit</a>
-</div>
-</div>
-</nav>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="hero-headline mb-6">
+                    Case <span class="intelligence-accent">Studies</span>
+                </h1>
+                <p class="hero-subtext">
+                    Real automation & analytics results from organizations that transformed their data strategy.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section class="pt-40 pb-24 text-center max-w-5xl mx-auto">
-<h1 class="hero-headline">Case Studies</h1>
-<p class="hero-subtext">Real automation & analytics results</p>
-</section>
+    <!-- Results Overview -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
+                <div>
+                    <div class="text-5xl font-bold text-secondary-navy mb-2">85%</div>
+                    <p class="text-text-secondary">Average time savings</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-secondary-navy mb-2">42%</div>
+                    <p class="text-text-secondary">Efficiency improvements</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-secondary-navy mb-2">2.3×</div>
+                    <p class="text-text-secondary">Average growth multiplier</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section-padding section-bg-light">
-<div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-<div class="card">
-<h3>E-commerce Growth</h3>
-<p>Reduced reporting time by 85% using automated dashboards.</p>
-</div>
-<div class="card">
-<h3>Logistics Ops</h3>
-<p>Improved fleet efficiency by 42% using real-time analytics.</p>
-</div>
-<div class="card">
-<h3>SaaS Funnel</h3>
-<p>2.3× increase in conversion through funnel intelligence.</p>
-</div>
-</div>
-</section>
+    <!-- Case Studies -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-8">
+                <!-- Case Study 1 -->
+                <div class="case-study-card card animate-fade-in-up">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="industry-tag">E-commerce</span>
+                        <span class="industry-tag">Retail Analytics</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">E-commerce Growth Through Intelligent Dashboards</h3>
+                    <div class="metric-badge">85% Time Reduction</div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">The Challenge</h4>
+                            <p class="text-text-secondary mb-4">A rapidly growing e-commerce retailer was spending 40+ hours per week manually compiling sales reports from multiple data sources. Their team needed real-time visibility into performance metrics but lacked the infrastructure to deliver it efficiently.</p>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Our Solution</h4>
+                            <p class="text-text-secondary">We built an automated analytics pipeline that integrated their Shopify store, Google Analytics, and advertising platforms into a unified real-time dashboard. Custom Python scripts automated data extraction, transformation, and loading (ETL) processes.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Key Results</h4>
+                            <ul class="space-y-3 text-text-secondary">
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Reduced reporting time from 40 hours/week to 6 hours/week (85% reduction)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Real-time sales tracking across 15+ key performance indicators</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Automated daily executive reports delivered via email</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>22% improvement in inventory decision-making speed</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>ROI achieved within 6 weeks of implementation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-<section class="section-padding text-center">
-<h2 class="text-4xl font-bold mb-4">Want Similar Results?</h2>
-<a href="contact.html" class="btn-primary">Book Free Audit</a>
-</section>
+                <!-- Case Study 2 -->
+                <div class="case-study-card card animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="industry-tag">Logistics</span>
+                        <span class="industry-tag">Operations</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Logistics Operations Optimization</h3>
+                    <div class="metric-badge">42% Efficiency Gain</div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">The Challenge</h4>
+                            <p class="text-text-secondary mb-4">A logistics company managing a fleet of 150+ vehicles struggled with route optimization and fuel cost management. Their existing systems provided limited visibility into real-time fleet performance, leading to inefficiencies and increased operational costs.</p>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Our Solution</h4>
+                            <p class="text-text-secondary">We developed a comprehensive fleet analytics system integrating GPS tracking data, fuel consumption metrics, and maintenance schedules. Advanced algorithms identified optimization opportunities and automated alert systems for critical issues.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Key Results</h4>
+                            <ul class="space-y-3 text-text-secondary">
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>42% improvement in overall fleet efficiency</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>18% reduction in fuel costs through route optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Real-time vehicle tracking and performance monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Predictive maintenance alerts reduced breakdowns by 34%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>$280K annual savings in operational costs</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Case Study 3 -->
+                <div class="case-study-card card animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="industry-tag">SaaS</span>
+                        <span class="industry-tag">Marketing Analytics</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">SaaS Conversion Funnel Intelligence</h3>
+                    <div class="metric-badge">2.3× Conversion Increase</div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">The Challenge</h4>
+                            <p class="text-text-secondary mb-4">A B2B SaaS company had low visibility into their customer acquisition funnel. They couldn't identify where prospects were dropping off or which marketing channels were driving the highest quality leads, resulting in wasted marketing spend and missed opportunities.</p>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Our Solution</h4>
+                            <p class="text-text-secondary">We implemented a comprehensive funnel analytics system tracking user behavior across all touchpoints. Built custom attribution models, cohort analysis dashboards, and automated A/B testing frameworks to optimize conversion at each stage.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Key Results</h4>
+                            <ul class="space-y-3 text-text-secondary">
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>2.3× increase in overall conversion rate (from 3.2% to 7.4%)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Identified and fixed 8 major drop-off points in the funnel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>47% reduction in customer acquisition cost (CAC)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Real-time funnel monitoring with automated alerts</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>$1.2M increase in annual recurring revenue (ARR)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="case-study-card card animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="industry-tag">Financial Services</span>
+                        <span class="industry-tag">Process Automation</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Financial Reporting Automation</h3>
+                    <div class="metric-badge">92% Time Savings</div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">The Challenge</h4>
+                            <p class="text-text-secondary mb-4">A financial services firm spent significant resources on manual monthly reporting, reconciliation, and compliance documentation. The process was error-prone, time-consuming, and created bottlenecks in strategic decision-making.</p>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Our Solution</h4>
+                            <p class="text-text-secondary">We designed and implemented end-to-end automation for their financial reporting workflows, integrating accounting systems, investment platforms, and compliance databases. Built automated reconciliation checks and exception handling systems.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-secondary-navy">Key Results</h4>
+                            <ul class="space-y-3 text-text-secondary">
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>92% reduction in monthly reporting time (from 120 to 10 hours)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>99.8% accuracy in automated reconciliation processes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Eliminated manual data entry errors completely</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Compliance documentation generated automatically</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-2">✓</span>
+                                    <span>Team reallocated to high-value strategic analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding section-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Hear from the leaders who transformed their data strategy</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <p class="text-text-secondary italic mb-4">"The automated dashboards have completely transformed how we make decisions. What used to take us days now happens in real-time. The ROI was immediate and continues to compound."</p>
+                    <div class="font-semibold text-secondary-navy">— Head of Analytics, E-commerce Retailer</div>
+                </div>
+                <div class="card">
+                    <p class="text-text-secondary italic mb-4">"TrendMetrics Intelligence didn't just give us data—they gave us actionable intelligence. The funnel insights directly contributed to our best quarter ever."</p>
+                    <div class="font-semibold text-secondary-navy">— VP of Marketing, B2B SaaS Company</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding section-bg-navy">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Want Similar Results?</h2>
+            <p class="text-xl text-gray-300 mb-8">Book a free data audit and discover how we can transform your analytics and automation strategy.</p>
+            <a href="contact.html" class="btn-primary">
+                Book Free Data Audit
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-navy text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="brand-logo mb-4">
+                        <svg height="40" width="40" viewBox="240 250 150 150" class="h-10">
+                            <path fill="#FFFFFF" d="M333.084351,249.697891 C345.210541,251.923676 356.395721,255.518250 366.880463,261.282776 C371.388702,263.761383 373.440247,266.776825 373.489990,272.317200 C373.798553,306.676880 360.543152,335.824524 339.636719,362.047028 C329.832520,374.344208 318.335785,384.953796 305.460052,394.061768 C302.599609,396.085175 300.377594,396.341003 297.430359,394.188568 C287.040070,386.600281 277.389648,378.200623 268.362488,369.040680 C265.879974,366.521606 265.580933,364.695984 268.276337,362.043060 C284.661530,345.915924 300.913788,329.653839 317.223602,313.449982 C318.047821,312.631134 318.939789,311.856934 319.893127,311.195862 C323.039337,309.013947 326.233368,309.014771 328.972626,311.732971 C331.892456,314.630371 332.092407,318.071320 329.291351,321.107788 C325.002075,325.757629 320.482269,330.199219 315.974609,334.642273 C306.603180,343.879395 297.241272,353.128326 287.724731,362.214539 C285.345520,364.486237 285.071533,366.096558 287.688873,368.215088 C290.794586,370.728851 293.896240,373.277008 296.747375,376.067993 C299.830627,379.086212 302.441589,379.085419 305.789124,376.276123 C332.802582,353.606384 351.801849,326.049866 358.080505,290.766785 C358.978546,285.720337 358.767334,280.483398 359.215607,275.347382 C359.473358,272.394257 357.234833,271.780457 355.356049,270.847443 C344.464661,265.438660 332.713074,263.014160 320.801239,261.538452 C299.575653,258.908997 278.597870,260.557556 258.001953,266.401672 C254.489197,267.398407 251.069901,268.768341 247.679352,270.143219 C239.778778,273.346924 239.675247,273.401123 240.405334,281.900482 C241.232910,291.534363 243.269119,300.897400 247.640091,310.572510 C253.201752,305.047119 258.345184,299.930328 263.496735,294.821747 C266.808868,291.537262 269.999786,288.114197 273.489258,285.029510 C276.965515,281.956482 281.195496,282.134003 283.781769,285.053345 C286.243652,287.832275 285.919769,292.512268 282.966003,295.425903 C271.105988,307.124695 259.228088,318.805450 247.331985,330.467499 C246.173553,331.603119 245.188492,333.067139 242.780991,333.304016 C240.033051,329.452911 238.049698,324.908051 236.088593,320.401001 C229.074203,304.280457 225.719360,287.465912 226.534424,269.824219 C226.686737,266.527252 228.041870,264.685425 230.702866,263.108673 C243.364227,255.606277 257.152069,251.588791 271.570679,249.182953 C291.985443,245.776642 312.323700,245.797012 333.084351,249.697891 z"/>
+                            <path fill="#FFFFFF" d="M277.693665,316.693054 C287.733124,306.713654 297.506531,296.968170 307.329376,287.272797 C308.977295,285.646240 310.674805,283.960632 312.639801,282.789642 C315.768951,280.924957 319.189178,280.868347 321.759186,283.719635 C324.358948,286.603943 323.902405,289.988159 321.527222,292.804657 C319.069366,295.719208 316.261963,298.345215 313.543427,301.032684 C296.164001,318.213409 278.696686,335.306213 261.437927,352.607147 C258.181396,355.871643 256.417603,355.745270 253.880478,351.934204 C248.744583,344.219391 248.459320,345.884796 254.810410,339.464478 C262.295074,331.898285 269.894531,324.445648 277.693665,316.693054 z"/>
+                        </svg>
+                        <div class="brand-logo-text">
+                            <span class="brand-logo-main" style="color: #FFFFFF;">Trendmetrics</span>
+                            <span class="brand-logo-sub" style="color: #FFFFFF;">INTELLIGENCE</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm">Premium Analytics & Automation Intelligence</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition">Data Analytics</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Process Automation</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">KPI Dashboards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Get Started</h4>
+                    <a href="contact.html" class="btn-primary">
+                        Book Free Consultation
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TrendMetrics Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
